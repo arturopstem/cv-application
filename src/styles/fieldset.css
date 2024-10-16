@@ -16,7 +16,8 @@
   }
 
   input,
-  select {
+  select,
+  textarea {
     font-size: inherit;
     font-family: inherit;
     padding: 0.5rem 1rem;
@@ -27,6 +28,10 @@
     &:focus-visible {
       outline: 0.125rem solid var(--primary-color);
     }
+  }
+
+  textarea {
+    resize: vertical;
   }
 
   option {
