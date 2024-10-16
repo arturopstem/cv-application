@@ -13,3 +13,7 @@ body {
     "Helvetica Neue",
     sans-serif;
 }
+
+menu {
+  list-style: none;
+}
