@@ -7,28 +7,28 @@ function PersonalField({ field, profile, setProfile }) {
   const handleChange = (e) => {
     const nextValue = e.target.value;
     setProfile((draft) => {
-      draft.personalDetails[def.id] = nextValue;
+      draft.personalDetails[def.name] = nextValue;
     });
   };
 
   return (
-    <fieldset className="fieldset" style={{ gridArea: def.id }}>
-      <label htmlFor={def.id}>{def.label}</label>
+    <fieldset className="fieldset" style={{ gridArea: def.name }}>
+      <label htmlFor={def.name}>{def.label}</label>
       {def.fieldType === 'input' && (
         <input
           type={def.type}
-          name={def.id}
-          id={def.id}
-          defaultValue={personalDetails[def.id]}
+          name={def.name}
+          id={def.name}
+          defaultValue={personalDetails[def.name]}
           onChange={handleChange}
           required={def.required}
         />
       )}
       {def.fieldType === 'select' && (
         <select
-          name={def.id}
-          id={def.id}
-          defaultValue={personalDetails[def.id]}
+          name={def.name}
+          id={def.name}
+          defaultValue={personalDetails[def.name]}
           onChange={handleChange}
           required={def.required}
         >
