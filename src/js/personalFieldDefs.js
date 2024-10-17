@@ -1,4 +1,4 @@
-const fieldDefinitions = {
+const personalFieldDefinitions = {
   firstName: {
     fieldType: 'input',
     type: 'text',
@@ -54,4 +54,4 @@ const fieldDefinitions = {
   },
 };
 
-export default fieldDefinitions;
+export default personalFieldDefinitions;
