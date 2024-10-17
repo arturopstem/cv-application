@@ -34,7 +34,6 @@ const workFieldDefinitions = {
     label: 'End Date',
     required: false,
   },
-
   description: {
     fieldType: 'textarea',
     name: 'description',
