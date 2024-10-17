@@ -7,8 +7,9 @@ function PersonalField({ field, profile, setProfile }) {
 
   const handleChange = (e) => {
     const nextValue = e.target.value;
-    setProfile((draft) => {
-      draft.personalDetails[def.name] = nextValue;
+
+    setProfile((profile) => {
+      profile.personalDetails[def.name] = nextValue;
     });
   };
 
