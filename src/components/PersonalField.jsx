@@ -20,7 +20,7 @@ function PersonalField({ field, profile, setProfile }) {
           type={def.type}
           name={def.name}
           id={inputId}
-          defaultValue={personalDetails[def.name]}
+          value={personalDetails[def.name] ?? ''}
           onChange={handleChange}
           required={def.required}
         />
@@ -29,7 +29,7 @@ function PersonalField({ field, profile, setProfile }) {
         <select
           name={def.name}
           id={inputId}
-          defaultValue={personalDetails[def.name]}
+          value={personalDetails[def.name] ?? ''}
           onChange={handleChange}
           required={def.required}
         >
