@@ -3,6 +3,7 @@ import personalFieldDefs from '../js/personalFieldDefs';
 function PersonalField({ field, profile, setProfile }) {
   const def = personalFieldDefs[field];
   const { personalDetails } = profile;
+  const inputId = def.name;
 
   const handleChange = (e) => {
     const nextValue = e.target.value;
@@ -13,12 +14,12 @@ function PersonalField({ field, profile, setProfile }) {
 
   return (
     <fieldset className="fieldset" style={{ gridArea: def.name }}>
-      <label htmlFor={def.name}>{def.label}</label>
+      <label htmlFor={inputId}>{def.label}</label>
       {def.fieldType === 'input' && (
         <input
           type={def.type}
           name={def.name}
-          id={def.name}
+          id={inputId}
           defaultValue={personalDetails[def.name]}
           onChange={handleChange}
           required={def.required}
@@ -27,7 +28,7 @@ function PersonalField({ field, profile, setProfile }) {
       {def.fieldType === 'select' && (
         <select
           name={def.name}
-          id={def.name}
+          id={inputId}
           defaultValue={personalDetails[def.name]}
           onChange={handleChange}
           required={def.required}
