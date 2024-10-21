@@ -16,4 +16,13 @@ body {
 
 menu {
   list-style: none;
+  padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }
