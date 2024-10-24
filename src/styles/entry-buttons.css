@@ -1,0 +1,17 @@
+.add-entry-btn {
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: light-dark(var(--light-secondary), var(--dark-secondary));
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.125rem;
+  height: 5ex;
+  width: 100%;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
+  }
+}
