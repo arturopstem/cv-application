@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import AddEntryButton from './AddEntryButton';
 import SkillEntry from './SkillEntry';
 
 function Skills({ profile, setProfile }) {
@@ -21,7 +22,11 @@ function Skills({ profile, setProfile }) {
       ))}
       <menu>
         <li>
-          <button onClick={addSkillEntry}>+ Add another skill entry</button>
+          <AddEntryButton
+            type="skill"
+            entries={skills}
+            onClick={addSkillEntry}
+          />
         </li>
       </menu>
     </section>

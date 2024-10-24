@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import AddEntryButton from './AddEntryButton';
 import WorkEntry from './WorkEntry';
 
 function WorkExperience({ profile, setProfile }) {
@@ -21,7 +22,11 @@ function WorkExperience({ profile, setProfile }) {
       ))}
       <menu>
         <li>
-          <button onClick={addWorkEntry}>+ Add another work entry</button>
+          <AddEntryButton
+            type="work"
+            entries={workExperience}
+            onClick={addWorkEntry}
+          />
         </li>
       </menu>
     </section>

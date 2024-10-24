@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import AddEntryButton from './AddEntryButton';
 import EducationEntry from './EducationEntry';
 
 function Education({ profile, setProfile }) {
@@ -21,9 +22,11 @@ function Education({ profile, setProfile }) {
       ))}
       <menu>
         <li>
-          <button onClick={addEducationEntry}>
-            + Add another education entry
-          </button>
+          <AddEntryButton
+            type="education"
+            entries={education}
+            onClick={addEducationEntry}
+          />
         </li>
       </menu>
     </section>
