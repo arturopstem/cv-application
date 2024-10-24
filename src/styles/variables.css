@@ -1,5 +1,5 @@
 :root {
-  --primary-color: rgb(88, 196, 220);
+  --primary-color: light-dark(rgb(8, 126, 164), rgb(88, 196, 220));
 
   --light-primary: rgb(246, 247, 249);
   --light-secondary: rgb(235, 236, 240);
