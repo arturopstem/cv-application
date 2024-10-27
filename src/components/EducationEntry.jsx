@@ -1,3 +1,4 @@
+import DeleteEntryButton from './DeleteEntryButton';
 import EducationField from './EducationField';
 
 function EducationEntry({ entry, setProfile }) {
@@ -16,9 +17,7 @@ function EducationEntry({ entry, setProfile }) {
       <nav>
         <menu>
           <li>
-            <button type="button" onClick={handleDelete}>
-              Delete
-            </button>
+            <DeleteEntryButton onClick={handleDelete} />
           </li>
         </menu>
       </nav>

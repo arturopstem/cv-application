@@ -1,3 +1,4 @@
+import DeleteEntryButton from './DeleteEntryButton';
 import SkillField from './SkillField';
 
 function SkillEntry({ entry, setProfile }) {
@@ -16,9 +17,7 @@ function SkillEntry({ entry, setProfile }) {
       <nav>
         <menu>
           <li>
-            <button type="button" onClick={handleDelete}>
-              Delete
-            </button>
+            <DeleteEntryButton onClick={handleDelete} />
           </li>
         </menu>
       </nav>
