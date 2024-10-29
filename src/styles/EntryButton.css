@@ -1,0 +1,41 @@
+.entry-button {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: 0.125rem solid light-dark(rgb(225, 226, 230), rgb(65, 68, 80));
+  color: light-dark(rgb(76, 76, 76), rgb(179, 179, 179));
+  border-radius: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+
+  &:is(:hover, :active, :focus-visible) {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+.entry-button--delete {
+  &:is(:hover, :active, :focus-visible) {
+    color: var(--danger);
+    border-color: var(--danger);
+  }
+}
+
+.entry-button--save {
+  &:is(:hover, :active, :focus-visible) {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}
+
+.entry-button__icon {
+  height: 1.25em;
+  aspect-ratio: 1 / 1;
+  fill: currentColor;
+}
