@@ -8,7 +8,7 @@ function WorkField({ field, entry, setProfile }) {
     const nextValue = e.target.value;
 
     setProfile((profile) => {
-      const targetWorkEntry = profile.workExperience.find(
+      const targetWorkEntry = profile.work.find(
         (workEntry) => workEntry.id === entry.id,
       );
 

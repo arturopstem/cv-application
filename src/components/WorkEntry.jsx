@@ -4,11 +4,11 @@ import WorkField from './WorkField';
 function WorkEntry({ entry, setProfile }) {
   const handleDelete = () => {
     setProfile((profile) => {
-      const nextWorkExperience = profile.workExperience.filter(
+      const nextWork = profile.work.filter(
         (workEntry) => workEntry.id !== entry.id,
       );
 
-      profile.workExperience = nextWorkExperience;
+      profile.work = nextWork;
     });
   };
 

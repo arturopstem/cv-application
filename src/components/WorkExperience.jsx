@@ -4,29 +4,25 @@ import AddEntryButton from './AddEntryButton';
 import WorkEntry from './WorkEntry';
 
 function WorkExperience({ profile, setProfile }) {
-  const { workExperience } = profile;
+  const { work } = profile;
 
   const addWorkEntry = () => {
     const newId = uuidv4();
 
     setProfile((profile) => {
-      profile.workExperience.push({ id: newId });
+      profile.work.push({ id: newId });
     });
   };
 
   return (
     <section className="work-experience">
       <h2>Work Experience</h2>
-      {workExperience.map((entry) => (
+      {work.map((entry) => (
         <WorkEntry key={entry.id} {...{ entry, setProfile }} />
       ))}
       <menu>
         <li>
-          <AddEntryButton
-            type="work"
-            entries={workExperience}
-            onClick={addWorkEntry}
-          />
+          <AddEntryButton type="work" entries={work} onClick={addWorkEntry} />
         </li>
       </menu>
     </section>
