@@ -1,3 +1,4 @@
+import { deleteEntry, saveEntry } from '../js/profileStorage';
 import EducationField from './EducationField';
 import EntryButton from './EntryButton';
 
@@ -10,10 +11,12 @@ function EducationEntry({ entry, setProfile }) {
 
       profile.education = nextEducation;
     });
+    deleteEntry('education', entry);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveEntry('education', entry);
   };
 
   return (

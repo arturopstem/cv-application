@@ -1,3 +1,4 @@
+import { deleteEntry, saveEntry } from '../js/profileStorage';
 import EntryButton from './EntryButton';
 import WorkField from './WorkField';
 
@@ -10,10 +11,12 @@ function WorkEntry({ entry, setProfile }) {
 
       profile.work = nextWork;
     });
+    deleteEntry('work', entry);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveEntry('work', entry);
   };
 
   return (

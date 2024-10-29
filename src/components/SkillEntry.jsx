@@ -1,3 +1,4 @@
+import { deleteEntry, saveEntry } from '../js/profileStorage';
 import EntryButton from './EntryButton';
 import SkillField from './SkillField';
 
@@ -10,10 +11,12 @@ function SkillEntry({ entry, setProfile }) {
 
       profile.skills = nextSkill;
     });
+    deleteEntry('skills', entry);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveEntry('skills', entry);
   };
 
   return (
