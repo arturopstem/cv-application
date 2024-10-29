@@ -1,4 +1,4 @@
-import DeleteEntryButton from './DeleteEntryButton';
+import EntryButton from './EntryButton';
 import SkillField from './SkillField';
 
 function SkillEntry({ entry, setProfile }) {
@@ -12,18 +12,25 @@ function SkillEntry({ entry, setProfile }) {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="skill-entry">
-      <nav>
-        <menu>
+      <form className="entry-form" onSubmit={handleSubmit}>
+        <div className="entry-form__fields">
+          <SkillField field="skill" {...{ entry, setProfile }} />
+          <SkillField field="level" {...{ entry, setProfile }} />
+        </div>
+        <menu className="entry-form__menu">
           <li>
-            <DeleteEntryButton onClick={handleDelete} />
+            <EntryButton type="delete" onClick={handleDelete} />
+          </li>
+          <li>
+            <EntryButton type="save" />
           </li>
         </menu>
-      </nav>
-      <form>
-        <SkillField field="skill" {...{ entry, setProfile }} />
-        <SkillField field="level" {...{ entry, setProfile }} />
       </form>
     </section>
   );

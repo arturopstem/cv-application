@@ -1,4 +1,4 @@
-import DeleteEntryButton from './DeleteEntryButton';
+import EntryButton from './EntryButton';
 import WorkField from './WorkField';
 
 function WorkEntry({ entry, setProfile }) {
@@ -12,22 +12,29 @@ function WorkEntry({ entry, setProfile }) {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="work-entry">
-      <nav>
-        <menu>
+      <form className="entry-form" onSubmit={handleSubmit}>
+        <div className="entry-form__fields">
+          <WorkField field="jobTitle" {...{ entry, setProfile }} />
+          <WorkField field="employer" {...{ entry, setProfile }} />
+          <WorkField field="cityTown" {...{ entry, setProfile }} />
+          <WorkField field="startDate" {...{ entry, setProfile }} />
+          <WorkField field="endDate" {...{ entry, setProfile }} />
+          <WorkField field="description" {...{ entry, setProfile }} />
+        </div>
+        <menu className="entry-form__menu">
           <li>
-            <DeleteEntryButton onClick={handleDelete} />
+            <EntryButton type="delete" onClick={handleDelete} />
+          </li>
+          <li>
+            <EntryButton type="save" />
           </li>
         </menu>
-      </nav>
-      <form>
-        <WorkField field="jobTitle" {...{ entry, setProfile }} />
-        <WorkField field="employer" {...{ entry, setProfile }} />
-        <WorkField field="cityTown" {...{ entry, setProfile }} />
-        <WorkField field="startDate" {...{ entry, setProfile }} />
-        <WorkField field="endDate" {...{ entry, setProfile }} />
-        <WorkField field="description" {...{ entry, setProfile }} />
       </form>
     </section>
   );

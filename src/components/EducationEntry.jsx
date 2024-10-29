@@ -1,5 +1,5 @@
-import DeleteEntryButton from './DeleteEntryButton';
 import EducationField from './EducationField';
+import EntryButton from './EntryButton';
 
 function EducationEntry({ entry, setProfile }) {
   const handleDelete = () => {
@@ -12,22 +12,29 @@ function EducationEntry({ entry, setProfile }) {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="education-entry">
-      <nav>
-        <menu>
+      <form className="entry-form" onSubmit={handleSubmit}>
+        <div className="entry-form__fields">
+          <EducationField field="degree" {...{ entry, setProfile }} />
+          <EducationField field="school" {...{ entry, setProfile }} />
+          <EducationField field="cityTown" {...{ entry, setProfile }} />
+          <EducationField field="startDate" {...{ entry, setProfile }} />
+          <EducationField field="endDate" {...{ entry, setProfile }} />
+          <EducationField field="description" {...{ entry, setProfile }} />
+        </div>
+        <menu className="entry-form__menu">
           <li>
-            <DeleteEntryButton onClick={handleDelete} />
+            <EntryButton type="delete" onClick={handleDelete} />
+          </li>
+          <li>
+            <EntryButton type="save" />
           </li>
         </menu>
-      </nav>
-      <form>
-        <EducationField field="degree" {...{ entry, setProfile }} />
-        <EducationField field="school" {...{ entry, setProfile }} />
-        <EducationField field="cityTown" {...{ entry, setProfile }} />
-        <EducationField field="startDate" {...{ entry, setProfile }} />
-        <EducationField field="endDate" {...{ entry, setProfile }} />
-        <EducationField field="description" {...{ entry, setProfile }} />
       </form>
     </section>
   );
