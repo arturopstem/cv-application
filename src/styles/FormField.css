@@ -1,0 +1,40 @@
+.form-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0.25rem;
+  border: none;
+
+  &:focus-within {
+    background-color: light-dark(rgb(188, 193, 205), rgb(43, 48, 59));
+    border-radius: 0.75rem;
+  }
+
+  label {
+    font-size: 1.125rem;
+    color: light-dark(var(--dark-secondary), var(--light-secondary));
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    background-color: light-dark(rgb(235, 236, 240), rgb(52, 58, 70));
+    border: 0.25rem solid light-dark(rgb(225, 226, 230), rgb(65, 68, 80));
+    border-radius: 1rem;
+
+    &:focus-visible {
+      outline: 0.125rem solid var(--primary-color);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  option {
+    text-align: center;
+  }
+}
