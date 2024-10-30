@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-function readStoredProfile() {
+export function readStoredProfile() {
   const storedProfile = localStorage.getItem('profile');
 
   if (storedProfile != null) {
