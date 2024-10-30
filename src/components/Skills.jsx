@@ -4,23 +4,23 @@ import AddEntryButton from './AddEntryButton';
 import EntryForm from './EntryForm';
 
 function Skills({ profile, setProfile }) {
-  const { skills } = profile;
+  const { skill } = profile;
 
   const addSkillEntry = () => {
     const newId = uuidv4();
 
     setProfile((profile) => {
-      profile.skills.push({ id: newId });
+      profile.skill.push({ id: newId });
     });
   };
 
   return (
-    <section className="skills">
+    <section className="skill">
       <h2>Skills</h2>
-      {skills.map((entry) => (
+      {skill.map((entry) => (
         <EntryForm
           key={entry.id}
-          entriesArrayName="skills"
+          entriesArrayName="skill"
           {...{ entry, setProfile }}
         />
       ))}
@@ -28,7 +28,7 @@ function Skills({ profile, setProfile }) {
         <li>
           <AddEntryButton
             type="skill"
-            entries={skills}
+            entries={skill}
             onClick={addSkillEntry}
           />
         </li>

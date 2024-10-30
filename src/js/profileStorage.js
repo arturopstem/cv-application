@@ -17,7 +17,7 @@ export function getInitialProfile() {
   initialProfile.personalDetails ??= {};
   initialProfile.work ??= [{ id: uuidv4() }];
   initialProfile.education ??= [{ id: uuidv4() }];
-  initialProfile.skills ??= [{ id: uuidv4() }];
+  initialProfile.skill ??= [{ id: uuidv4() }];
 
   return initialProfile;
 }

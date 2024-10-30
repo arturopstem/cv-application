@@ -142,7 +142,7 @@ const education = {
   },
 };
 
-const skills = {
+const skill = {
   skill: {
     fieldType: 'input',
     type: 'text',
@@ -166,6 +166,6 @@ const skills = {
   },
 };
 
-const fieldDefinitions = { personal, work, education, skills };
+const fieldDefinitions = { personal, work, education, skill };
 
 export default fieldDefinitions;
