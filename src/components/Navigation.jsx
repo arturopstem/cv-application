@@ -1,22 +1,15 @@
+import sectionDefinitions from '../js/sectionDefinitions';
 import '../styles/Navigation.css';
 import NavButton from './NavButton';
-
-const VIEWS = [
-  { name: 'personal', label: 'Personal Details' },
-  { name: 'work', label: 'Work Experience' },
-  { name: 'education', label: 'Education' },
-  { name: 'skill', label: 'Skills' },
-  { name: 'template', label: 'Template' },
-];
 
 function Navigation({ currentView, setCurrentView }) {
   return (
     <nav className="navigation">
       <menu className="view-nav-menu">
-        {VIEWS.map((view) => (
+        {sectionDefinitions.map((section) => (
           <NavButton
-            key={view.name}
-            {...{ view, currentView, setCurrentView }}
+            key={section.name}
+            {...{ section, currentView, setCurrentView }}
           />
         ))}
       </menu>

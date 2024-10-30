@@ -1,18 +1,18 @@
 import classNames from 'classnames';
 
-function NavButton({ view, currentView, setCurrentView }) {
-  const isSelected = view.name === currentView;
+function NavButton({ section, currentView, setCurrentView }) {
+  const isSelected = section.name === currentView;
   const btnClass = classNames({
     'view-nav-btn': true,
     selected: isSelected,
   });
 
-  const handleClick = () => setCurrentView(view.name);
+  const handleClick = () => setCurrentView(section.name);
 
   return (
     <li>
       <button className={btnClass} onClick={handleClick}>
-        {view.label}
+        {section.title}
       </button>
     </li>
   );
