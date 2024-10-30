@@ -1,6 +1,7 @@
 import Education from './Education';
 import PersonalDetails from './PersonalDetails';
 import Skills from './Skills';
+import Template from './Template';
 import WorkExperience from './WorkExperience';
 
 function Main({ currentView, profile, setProfile }) {
@@ -20,6 +21,7 @@ function Main({ currentView, profile, setProfile }) {
       mainContent = <Skills {...{ profile, setProfile }} />;
       break;
     case 'template':
+      mainContent = <Template />;
       break;
   }
 
