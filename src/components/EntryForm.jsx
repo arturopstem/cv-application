@@ -1,10 +1,14 @@
 import fieldDefinitions from '../js/fieldDefinitions';
 import { deleteEntry, saveEntry } from '../js/profileStorage';
+import sectionDefinitions from '../js/sectionDefinitions';
 import EntryButton from './EntryButton';
 import FormField from './FormField';
 
 function EntryForm({ section, entry, setProfile }) {
   const fields = Object.keys(fieldDefinitions[section]);
+  const { isMultiEntry } = sectionDefinitions.find(
+    (sectionDef) => sectionDef.name === section,
+  );
 
   const handleDelete = () => {
     setProfile((profile) => {
@@ -34,9 +38,11 @@ function EntryForm({ section, entry, setProfile }) {
           })}
         </div>
         <menu className="entry-form__menu">
-          <li>
-            <EntryButton type="delete" onClick={handleDelete} />
-          </li>
+          {isMultiEntry && (
+            <li>
+              <EntryButton type="delete" onClick={handleDelete} />
+            </li>
+          )}
           <li>
             <EntryButton type="save" />
           </li>
