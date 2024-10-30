@@ -18,11 +18,7 @@ function WorkExperience({ profile, setProfile }) {
     <section className="work-experience">
       <h2>Work Experience</h2>
       {work.map((entry) => (
-        <EntryForm
-          key={entry.id}
-          entriesArrayName="work"
-          {...{ entry, setProfile }}
-        />
+        <EntryForm key={entry.id} section="work" {...{ entry, setProfile }} />
       ))}
       <menu>
         <li>

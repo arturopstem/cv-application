@@ -20,7 +20,7 @@ function Education({ profile, setProfile }) {
       {education.map((entry) => (
         <EntryForm
           key={entry.id}
-          entriesArrayName="education"
+          section="education"
           {...{ entry, setProfile }}
         />
       ))}

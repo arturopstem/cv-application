@@ -3,26 +3,26 @@ import { deleteEntry, saveEntry } from '../js/profileStorage';
 import EntryButton from './EntryButton';
 import FormField from './FormField';
 
-function EntryForm({ entriesArrayName, entry, setProfile }) {
-  const fields = Object.keys(fieldDefinitions[entriesArrayName]);
+function EntryForm({ section, entry, setProfile }) {
+  const fields = Object.keys(fieldDefinitions[section]);
 
   const handleDelete = () => {
     setProfile((profile) => {
-      const nextEntriesArray = profile[entriesArrayName].filter(
-        (entryInArray) => entryInArray.id !== entry.id,
+      const nextEntriesArray = profile[section].filter(
+        (sectionEntry) => sectionEntry.id !== entry.id,
       );
 
-      profile[entriesArrayName] = nextEntriesArray;
+      profile[section] = nextEntriesArray;
     });
-    deleteEntry(entriesArrayName, entry);
+    deleteEntry(section, entry);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    saveEntry(entriesArrayName, entry);
+    saveEntry(section, entry);
   };
 
-  const formFieldProps = { entriesArrayName, entry, setProfile };
+  const formFieldProps = { section, entry, setProfile };
 
   return (
     <section className="entry-form-wrapper">

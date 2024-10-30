@@ -1,16 +1,16 @@
 import fieldDefinitions from '../js/fieldDefinitions';
 import '../styles/FormField.css';
 
-function FormField({ entriesArrayName, field, entry, setProfile }) {
-  const def = fieldDefinitions[entriesArrayName][field];
+function FormField({ section, field, entry, setProfile }) {
+  const def = fieldDefinitions[section][field];
   const inputId = `${def.name}_${entry.id}`;
 
   const handleChange = (e) => {
     const nextValue = e.target.value;
 
     setProfile((profile) => {
-      const targetEntry = profile[entriesArrayName].find(
-        (entryInArray) => entryInArray.id === entry.id,
+      const targetEntry = profile[section].find(
+        (sectionEntry) => sectionEntry.id === entry.id,
       );
 
       targetEntry[def.name] = nextValue;

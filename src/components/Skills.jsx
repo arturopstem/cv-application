@@ -18,11 +18,7 @@ function Skills({ profile, setProfile }) {
     <section className="skill">
       <h2>Skills</h2>
       {skill.map((entry) => (
-        <EntryForm
-          key={entry.id}
-          entriesArrayName="skill"
-          {...{ entry, setProfile }}
-        />
+        <EntryForm key={entry.id} section="skill" {...{ entry, setProfile }} />
       ))}
       <menu>
         <li>
