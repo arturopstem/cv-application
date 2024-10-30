@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import AddEntryButton from './AddEntryButton';
-import SkillEntry from './SkillEntry';
+import EntryForm from './EntryForm';
 
 function Skills({ profile, setProfile }) {
   const { skills } = profile;
@@ -18,7 +18,11 @@ function Skills({ profile, setProfile }) {
     <section className="skills">
       <h2>Skills</h2>
       {skills.map((entry) => (
-        <SkillEntry key={entry.id} {...{ entry, setProfile }} />
+        <EntryForm
+          key={entry.id}
+          entriesArrayName="skills"
+          {...{ entry, setProfile }}
+        />
       ))}
       <menu>
         <li>

@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import AddEntryButton from './AddEntryButton';
-import WorkEntry from './WorkEntry';
+import EntryForm from './EntryForm';
 
 function WorkExperience({ profile, setProfile }) {
   const { work } = profile;
@@ -18,7 +18,11 @@ function WorkExperience({ profile, setProfile }) {
     <section className="work-experience">
       <h2>Work Experience</h2>
       {work.map((entry) => (
-        <WorkEntry key={entry.id} {...{ entry, setProfile }} />
+        <EntryForm
+          key={entry.id}
+          entriesArrayName="work"
+          {...{ entry, setProfile }}
+        />
       ))}
       <menu>
         <li>
