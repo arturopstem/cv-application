@@ -2,10 +2,10 @@ import '../styles/Navigation.css';
 import NavButton from './NavButton';
 
 const VIEWS = [
-  { name: 'personal-details', label: 'Personal Details' },
-  { name: 'work-experience', label: 'Work Experience' },
+  { name: 'personal', label: 'Personal Details' },
+  { name: 'work', label: 'Work Experience' },
   { name: 'education', label: 'Education' },
-  { name: 'skills', label: 'Skills' },
+  { name: 'skill', label: 'Skills' },
   { name: 'template', label: 'Template' },
 ];
 

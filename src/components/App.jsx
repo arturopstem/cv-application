@@ -9,7 +9,7 @@ import Navigation from './Navigation';
 
 function App() {
   const [profile, setProfile] = useImmer(getInitialProfile);
-  const [currentView, setCurrentView] = useState('personal-details');
+  const [currentView, setCurrentView] = useState('personal');
 
   return (
     <>

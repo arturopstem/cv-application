@@ -8,16 +8,16 @@ function Main({ currentView, profile, setProfile }) {
   let mainContent = <>Loading ...</>;
 
   switch (currentView) {
-    case 'personal-details':
+    case 'personal':
       mainContent = <PersonalDetails {...{ profile, setProfile }} />;
       break;
-    case 'work-experience':
+    case 'work':
       mainContent = <WorkExperience {...{ profile, setProfile }} />;
       break;
     case 'education':
       mainContent = <Education {...{ profile, setProfile }} />;
       break;
-    case 'skills':
+    case 'skill':
       mainContent = <Skills {...{ profile, setProfile }} />;
       break;
     case 'template':
