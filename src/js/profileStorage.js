@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import sectionDefinitions from './sectionDefinitions';
+
 export function readStoredProfile() {
   const storedProfile = localStorage.getItem('profile');
 
@@ -13,11 +15,11 @@ export function readStoredProfile() {
 export function getInitialProfile() {
   const storedProfile = readStoredProfile();
   const initialProfile = storedProfile ?? {};
+  const sections = sectionDefinitions.filter((def) => def.isEditable);
 
-  initialProfile.personalDetails ??= {};
-  initialProfile.work ??= [{ id: uuidv4() }];
-  initialProfile.education ??= [{ id: uuidv4() }];
-  initialProfile.skill ??= [{ id: uuidv4() }];
+  sections.forEach((section) => {
+    initialProfile[section.name] ??= [{ id: uuidv4() }];
+  });
 
   return initialProfile;
 }
@@ -32,16 +34,6 @@ function filterOutEmptyValues(obj) {
   }
 
   return nextObj;
-}
-
-export function savePersonalDetails(personalDetails) {
-  const storedProfile = readStoredProfile();
-  const profile = storedProfile ?? {};
-  const nextPersonalDetails = filterOutEmptyValues(personalDetails);
-
-  profile.personalDetails = nextPersonalDetails;
-
-  localStorage.setItem('profile', JSON.stringify(profile));
 }
 
 function findEntryIndex(entries, id) {

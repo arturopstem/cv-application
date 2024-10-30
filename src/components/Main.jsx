@@ -1,24 +1,17 @@
-import Education from './Education';
-import PersonalDetails from './PersonalDetails';
-import Skills from './Skills';
+import EntriesSection from './EntriesSection';
 import Template from './Template';
-import WorkExperience from './WorkExperience';
 
-function Main({ currentView, profile, setProfile }) {
+function Main({ currentView: section, profile, setProfile }) {
   let mainContent = <>Loading ...</>;
 
-  switch (currentView) {
+  const entriesSectionProps = { section, profile, setProfile };
+
+  switch (section) {
     case 'personal':
-      mainContent = <PersonalDetails {...{ profile, setProfile }} />;
-      break;
     case 'work':
-      mainContent = <WorkExperience {...{ profile, setProfile }} />;
-      break;
     case 'education':
-      mainContent = <Education {...{ profile, setProfile }} />;
-      break;
     case 'skill':
-      mainContent = <Skills {...{ profile, setProfile }} />;
+      mainContent = <EntriesSection {...entriesSectionProps} />;
       break;
     case 'template':
       mainContent = <Template />;
