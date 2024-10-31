@@ -1,6 +1,7 @@
 import fieldDefinitions from '../js/fieldDefinitions';
 import { deleteEntry, saveEntry } from '../js/profileStorage';
 import sectionDefinitions from '../js/sectionDefinitions';
+import '../styles/EntryForm.css';
 import EntryButton from './EntryButton';
 import FormField from './FormField';
 

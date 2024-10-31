@@ -1,0 +1,5 @@
+.entry-form__menu {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
