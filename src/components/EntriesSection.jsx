@@ -1,3 +1,4 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { v4 as uuidv4 } from 'uuid';
 
 import sectionDefinitions from '../js/sectionDefinitions';
@@ -5,6 +6,7 @@ import AddEntryButton from './AddEntryButton';
 import EntryForm from './EntryForm';
 
 function EntriesSection({ section, profile, setProfile }) {
+  const [parent] = useAutoAnimate({ disrespectUserMotionPreference: true });
   const entries = profile[section];
 
   const def = sectionDefinitions.find((def) => def.name === section);
@@ -18,7 +20,7 @@ function EntriesSection({ section, profile, setProfile }) {
   };
 
   return (
-    <section className="entries-section">
+    <section ref={parent} className="entries-section">
       <h2>{def.title}</h2>
       {entries.map((entry) => (
         <EntryForm key={entry.id} {...{ section, entry, setProfile }} />
