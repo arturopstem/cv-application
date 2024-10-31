@@ -13,7 +13,7 @@ function EntriesSection({ section, profile, setProfile }) {
     const newId = uuidv4();
 
     setProfile((profile) => {
-      profile[entries].push({ id: newId });
+      profile[section].push({ id: newId });
     });
   };
 
