@@ -27,6 +27,13 @@ const personal = {
     label: 'Phone number',
     required: false,
   },
+  linkedin: {
+    fieldType: 'input',
+    type: 'text',
+    name: 'linkedin',
+    label: 'LinkedIn',
+    required: false,
+  },
   nationality: {
     fieldType: 'input',
     type: 'text',
