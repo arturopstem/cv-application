@@ -27,24 +27,6 @@ const personal = {
     label: 'Phone number',
     required: false,
   },
-  dateOfBirth: {
-    fieldType: 'input',
-    type: 'date',
-    name: 'dateOfBirth',
-    label: 'Date of birth',
-    required: false,
-  },
-  gender: {
-    fieldType: 'select',
-    name: 'gender',
-    label: 'Gender',
-    required: false,
-    options: [
-      { value: '', text: '-- Select --' },
-      { value: 'male', text: 'Male' },
-      { value: 'female', text: 'Female' },
-    ],
-  },
   nationality: {
     fieldType: 'input',
     type: 'text',
