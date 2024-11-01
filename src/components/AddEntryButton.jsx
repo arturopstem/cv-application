@@ -1,3 +1,5 @@
+import '../styles/AddEntryButton.css';
+
 function AddEntryButton({ type, entries, onClick }) {
   const entryQuantityIndicator = entries.length > 0 ? 'another' : '';
   const buttonText = `+ Add ${entryQuantityIndicator} ${type} entry`;
