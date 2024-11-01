@@ -3,7 +3,7 @@ function AddEntryButton({ type, entries, onClick }) {
   const buttonText = `+ Add ${entryQuantityIndicator} ${type} entry`;
 
   return (
-    <button className="add-entry-btn" onClick={onClick}>
+    <button className="add-entry-button" onClick={onClick}>
       {buttonText}
     </button>
   );
