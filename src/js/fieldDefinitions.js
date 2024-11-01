@@ -13,18 +13,18 @@ const personal = {
     label: 'Last name',
     required: true,
   },
-  emailAddress: {
+  email: {
     fieldType: 'input',
     type: 'email',
-    name: 'emailAddress',
-    label: 'Email address',
+    name: 'email',
+    label: 'E-mail',
     required: true,
   },
-  phoneNumber: {
+  phone: {
     fieldType: 'input',
     type: 'tel',
-    name: 'phoneNumber',
-    label: 'Phone number',
+    name: 'phone',
+    label: 'Phone',
     required: false,
   },
   linkedin: {
