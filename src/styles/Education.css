@@ -1,0 +1,21 @@
+.education__entry {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 4ch;
+}
+
+.education__date {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(2, min-content);
+  gap: 1ch;
+}
+
+.education__school-info {
+  font-style: italic;
+}
+
+.education__description {
+  list-style-position: inside;
+}

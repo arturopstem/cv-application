@@ -1,0 +1,21 @@
+.work__entry {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 4ch;
+}
+
+.work__date {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(2, min-content);
+  gap: 1ch;
+}
+
+.work__employer-info {
+  font-style: italic;
+}
+
+.work__description {
+  list-style-position: inside;
+}

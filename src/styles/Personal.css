@@ -1,0 +1,16 @@
+.personal__info {
+  display: flex;
+  gap: 1ch;
+}
+
+.personal__info--fullName {
+  font-size: xxx-large;
+}
+
+.personal__info__field {
+  font-weight: bold;
+}
+
+.personal__info__value {
+  overflow-wrap: anywhere;
+}
