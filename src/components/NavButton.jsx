@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 
+import { saveView } from '../js/viewStorage';
+
 function NavButton({ section, currentView, setCurrentView }) {
   const isSelected = section.name === currentView;
   const btnClass = classNames({
@@ -7,7 +9,10 @@ function NavButton({ section, currentView, setCurrentView }) {
     selected: isSelected,
   });
 
-  const handleClick = () => setCurrentView(section.name);
+  const handleClick = () => {
+    setCurrentView(section.name);
+    saveView(section.name);
+  };
 
   return (
     <li>
