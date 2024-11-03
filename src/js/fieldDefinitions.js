@@ -70,14 +70,14 @@ const work = {
     type: 'month',
     name: 'startDate',
     label: 'Start Date',
-    required: false,
+    required: true,
   },
   endDate: {
     fieldType: 'input',
     type: 'month',
     name: 'endDate',
     label: 'End Date',
-    required: false,
+    required: true,
   },
   description: {
     fieldType: 'textarea',
@@ -114,14 +114,14 @@ const education = {
     type: 'month',
     name: 'startDate',
     label: 'Start Date',
-    required: false,
+    required: true,
   },
   endDate: {
     fieldType: 'input',
     type: 'month',
     name: 'endDate',
     label: 'End Date',
-    required: false,
+    required: true,
   },
   description: {
     fieldType: 'textarea',
